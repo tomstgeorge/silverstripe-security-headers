@@ -10,9 +10,9 @@ use Symbiote\QueuedJobs\Services\QueuedJobService;
 
 class RemoveUnreferencedCSPDocumentsTask extends BuildTask
 {
-    private static $title = 'Remove unreferenced CSP Document URIs';
+    protected string $title = 'Remove unreferenced CSP Document URIs';
 
-    private static $description =
+    protected string $description =
     'CSP Document URIs that are not referenced by a CSP violation report can be safely removed.';
 
     /**

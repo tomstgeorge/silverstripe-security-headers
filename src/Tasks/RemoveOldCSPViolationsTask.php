@@ -12,7 +12,7 @@ use Symbiote\QueuedJobs\Services\QueuedJobService;
 
 class RemoveOldCSPViolationsTask extends BuildTask
 {
-    private static $title = 'Remove old CSP violation reports';
+    protected string $title = 'Remove old CSP violation reports';
 
     /**
      * {@inheritDoc}
