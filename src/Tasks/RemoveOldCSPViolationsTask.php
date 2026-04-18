@@ -1,28 +1,31 @@
 <?php
 
-namespace Signify\Tasks;
+namespace Signify\SecurityHeaders\Tasks;
 
 use DateInterval;
-use Signify\Jobs\RemoveOldCSPViolationsJob;
+use Signify\SecurityHeaders\Jobs\RemoveOldCSPViolationsJob;
+use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Dev\BuildTask;
+use SilverStripe\PolyExecution\PolyOutput;
 use Symbiote\QueuedJobs\Services\QueuedJobService;
 
 class RemoveOldCSPViolationsTask extends BuildTask
 {
-    protected $title = 'Remove old CSP violation reports';
+    private static $title = 'Remove old CSP violation reports';
 
     /**
      * {@inheritDoc}
      * @see \SilverStripe\Dev\BuildTask::run()
      */
-    public function run($request)
+    public function run(HTTPRequest|PolyOutput $request, PolyOutput|null $output = null): bool|void
     {
         $deletionJob = new RemoveOldCSPViolationsJob();
 
         $jobId = singleton(QueuedJobService::class)->queueJob($deletionJob);
 
-        print "Job queued with ID $jobId\n";
+        $output?->writeln("Job queued with ID $jobId");
+        return true;
     }
 
     /**

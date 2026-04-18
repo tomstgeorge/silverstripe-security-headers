@@ -21,6 +21,7 @@
     "issues": "https://github.com/signify-nz/silverstripe-security-headers/issues"
   },
   "require": {
+      "php": "^8.3",
       "silverstripe/vendor-plugin": "^3.0",
       "silverstripe/framework": "^6.0",
       "silverstripe/cms": "^6.0",
@@ -41,7 +42,7 @@
   "autoload": {
     "psr-4": {
       "Signify\\SecurityHeaders\\": "src/",
-      "Signify\\SecurityHeaders\\Tests\\": "tests/"
+      "Signify\\SecurityHeaders\\Tests\\": "tests/php/"
     }
   },
   "config": {
