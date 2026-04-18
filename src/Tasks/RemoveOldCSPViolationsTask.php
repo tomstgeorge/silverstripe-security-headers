@@ -18,7 +18,7 @@ class RemoveOldCSPViolationsTask extends BuildTask
      * {@inheritDoc}
      * @see \SilverStripe\Dev\BuildTask::run()
      */
-    public function run(HTTPRequest|PolyOutput $request, PolyOutput|null $output = null): bool|void
+    public function run(HTTPRequest|PolyOutput $request, PolyOutput|null $output = null): bool
     {
         $deletionJob = new RemoveOldCSPViolationsJob();
 
