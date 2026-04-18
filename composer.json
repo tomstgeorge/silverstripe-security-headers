@@ -21,7 +21,7 @@
     "issues": "https://github.com/signify-nz/silverstripe-security-headers/issues"
   },
   "require": {
-      "silverstripe/vendor-plugin": "^2.0",
+      "silverstripe/vendor-plugin": "^3.0",
       "silverstripe/framework": "^6.0",
       "silverstripe/cms": "^6.0",
       "symbiote/silverstripe-queuedjobs": "^6.0"
